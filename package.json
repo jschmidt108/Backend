@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Tricia Gray",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jschmidt108/Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jschmidt108/Backend/issues"
+  },
+  "homepage": "https://github.com/jschmidt108/Backend#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
