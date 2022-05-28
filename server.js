@@ -50,12 +50,12 @@ app.use(cors());
 // Seed data => only run this once
 //___________________
 
-app.get('/artworks/seed', (req, res) => {
-    Artworks.create(seedData, (err, createData) => {
-        console.log('seed data registered')
-    })
-    res.redirect('/artworks')
-})
+// app.get('/artworks/seed', (req, res) => {
+//     Artworks.create(seedData, (err, createData) => {
+//         console.log('seed data registered')
+//     })
+//     res.redirect('/artworks')
+// })
 
 //___________________
 //Create / POST route
