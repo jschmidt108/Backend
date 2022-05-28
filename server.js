@@ -4,7 +4,10 @@
 
 const express = require('express');
 const mongoose = require ('mongoose');
-// const cors = require('cors');
+const cors = require('cors');
+const seedData = require('./models/seed.js')
+const Artworks = require('./models/artworks.js');
+const Pages = require('./models/pages.js');
 const app = express ();
 require('dotenv').config()
 
@@ -37,15 +40,70 @@ mongoose.connect(MONGODB_URI , () => {
 //___________________
 
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
 /////////////////////////////////////////////////////////////////////////
 // routes
 /////////////////////////////////////////////////////////////////////////
 
-app.get('/', (req, res)=> {
-  res.send('Hello world')
+//___________________
+// Seed data => only run this once
+//___________________
+
+app.get('/artworks/seed', (req, res) => {
+    Artworks.create(seedData, (err, createData) => {
+        console.log('seed data registered')
+    })
+    res.redirect('/artworks')
 })
+
+//___________________
+//Create / POST route
+//___________________
+
+app.post('/artworks', (req, res) => {
+    Artworks.create(req.body, (err, createdArtwork) => {
+        res.json(createdArtwork);
+    })
+})
+
+//___________________
+//Index / GET route
+//___________________
+
+app.get('/artworks', (req, res)=> {
+    Artworks.find({}, (err, foundArtworks)=> {
+        res.json(foundArtworks);
+    })
+})
+
+//___________________
+//Remove / DELETE route
+//___________________
+
+app.delete('/artworks/:id', (req, res) => {
+    Artworks.findByIdAndRemove(req.params.id, (err, deletedArtwork) => {
+        res.json(deletedArtwork);
+    })
+})
+
+//___________________
+//Update / PUT route
+//___________________
+
+app.put('/artworks/:id', (req, res)=>{
+    Artworks.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedArtwork)=>{
+        res.json(updatedArtwork);
+    })
+})
+
+//___________________
+//Initial Test route
+//___________________
+
+// app.get('/', (req, res)=> {
+//   res.send('Hello world')
+// })
 
 /////////////////////////////////////////////////////////////////////////
 // connection
