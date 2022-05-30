@@ -5,9 +5,10 @@
 const express = require('express');
 const mongoose = require ('mongoose');
 const cors = require('cors');
-const seedData = require('./models/seed.js')
 const Artworks = require('./models/artworks.js');
-const Pages = require('./models/pages.js');
+// const seedData = require('./models/oldSeed.js')
+// const Artworks = require('./models/oldSchema.js');
+// const Pages = require('./models/oldPages.js');
 const app = express ();
 require('dotenv').config()
 
