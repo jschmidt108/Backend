@@ -5,10 +5,8 @@
 const express = require('express');
 const mongoose = require ('mongoose');
 const cors = require('cors');
-const Artworks = require('./models/artworks.js');
+const Assets = require('./models/assets.js');
 // const seedData = require('./models/oldSeed.js')
-// const Artworks = require('./models/oldSchema.js');
-// const Pages = require('./models/oldPages.js');
 const app = express ();
 require('dotenv').config()
 
@@ -51,20 +49,20 @@ app.use(cors());
 // Seed data => only run this once
 //___________________
 
-// app.get('/artworks/seed', (req, res) => {
-//     Artworks.create(seedData, (err, createData) => {
+// app.get('/assets/seed', (req, res) => {
+//     Assets.create(seedData, (err, createData) => {
 //         console.log('seed data registered')
 //     })
-//     res.redirect('/artworks')
+//     res.redirect('/assets')
 // })
 
 //___________________
 //Create / POST route
 //___________________
 
-app.post('/artworks', (req, res) => {
-    Artworks.create(req.body, (err, createdArtwork) => {
-        res.json(createdArtwork);
+app.post('/assets', (req, res) => {
+    Assets.create(req.body, (err, createdAsset) => {
+        res.json(createdAsset);
     })
 })
 
@@ -72,9 +70,9 @@ app.post('/artworks', (req, res) => {
 //Index / GET route
 //___________________
 
-app.get('/artworks', (req, res)=> {
-    Artworks.find({}, (err, foundArtworks)=> {
-        res.json(foundArtworks);
+app.get('/assets', (req, res)=> {
+    Assets.find({}, (err, foundAssets)=> {
+        res.json(foundAssets);
     })
 })
 
@@ -82,9 +80,9 @@ app.get('/artworks', (req, res)=> {
 //Remove / DELETE route
 //___________________
 
-app.delete('/artworks/:id', (req, res) => {
-    Artworks.findByIdAndRemove(req.params.id, (err, deletedArtwork) => {
-        res.json(deletedArtwork);
+app.delete('/assets/:id', (req, res) => {
+    Assets.findByIdAndRemove(req.params.id, (err, deletedAsset) => {
+        res.json(deletedAsset);
     })
 })
 
@@ -92,9 +90,9 @@ app.delete('/artworks/:id', (req, res) => {
 //Update / PUT route
 //___________________
 
-app.put('/artworks/:id', (req, res)=>{
-    Artworks.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedArtwork)=>{
-        res.json(updatedArtwork);
+app.put('/assets/:id', (req, res)=>{
+    Assets.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedAsset)=>{
+        res.json(updatedAsset);
     })
 })
 
