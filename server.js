@@ -7,7 +7,7 @@ const mongoose = require ('mongoose');
 const cors = require('cors');
 const Assets = require('./models/assets.js');
 // const seedData = require('./models/oldSeed.js')
-const app = express ();
+const app = express();
 require('dotenv').config()
 
 //___________________
