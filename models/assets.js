@@ -2,6 +2,8 @@ const mongoose = require ('mongoose')
 
 const assetsSchema = mongoose.Schema({
     // primary info
+    bought: Boolean,
+    sold: Boolean,
     primary_Image: String, 
     title: String,
     description: String,
