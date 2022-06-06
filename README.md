@@ -15,8 +15,11 @@ We leveraged a 3rd party API to bring in ETH and SOL prices - the main crypto cu
 This app was built using the MERN stack (MongoDB, Express, React, Node) and deployed using MongoDB Atlas and Heroku. 
 
 MongoDB - document database 
+
 Express(.js) - Node.js web framework 
+
 React(.js) - a client-side JavaScript framework 
+
 Node(.js) - JavaScript web server
 
 
