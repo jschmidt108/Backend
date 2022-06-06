@@ -34,3 +34,18 @@ Implement user authentication - I.e. login credentials
 Implemented GitHub best practices when collaborating on projects - I.e., created branches specific to features and/or certain functionality. Tested each before merging to dev/ main branches and eventually deploying. 
 
 Utilized Miro - project management tool to help prioritize daily sprint goals in order to complete MVP (minimum viable product). Once we were able to successfully finish MVP we used Miro to help us visualize stretch goals and our app design. 
+
+## Links 
+
+Back-end repo - https://github.com/jschmidt108/Backend
+
+Back-end Heroku - https://still-stream-84605.herokuapp.com/assets
+
+Front-end repo - https://github.com/graylt/New-frontend
+
+Front-end Heroku - https://serene-shelf-50836.herokuapp.com/
+
+3rd party API source - https://api.coincap.io/v2/assets
+
+
+
